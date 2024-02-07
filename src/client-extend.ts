@@ -1,10 +1,9 @@
 import { got } from "got"
 
 async function run() {
-  return await got("http://localhost:3000/retry", {
+  const gotExtend = got.extend({
     retry: {
-      limit: 2,
-      statusCodes: [400],
+      limit: 0,
     },
     throwHttpErrors: false,
     hooks: {
@@ -26,6 +25,8 @@ async function run() {
       ],
     },
   })
+
+  return await gotExtend("http://localhost:3000/noretry")
 }
 
 void run()

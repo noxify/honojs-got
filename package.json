@@ -18,7 +18,8 @@
     "lint:fix": "eslint . --fix",
     "dev": "tsx watch src/index.ts",
     "retry": "tsx src/client-retry.ts",
-    "noretry": "tsx src/client-noretry.ts"
+    "noretry": "tsx src/client-noretry.ts",
+    "extend": "tsx src/client-extend.ts"
   },
   "dependencies": {
     "@hono/node-server": "1.7.0",
